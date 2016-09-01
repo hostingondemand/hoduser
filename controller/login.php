@@ -14,11 +14,13 @@ class Login extends Controller
     {
         $model=$this->model->login->fromRequest();
         if($model->isValid() && $model->tryLogin()){
-
+           return $this->response->redirect("","profile","home");
         }else{
-
+           return $this->response->renderView($model,"login/home");
         }
     }
+
+
 }
 
 ?>
