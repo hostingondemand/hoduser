@@ -1,7 +1,8 @@
 <?php return array(
     "modules"=>array(
         "maxpatch",
-        "maxclient"
+        "maxclient",
+        "hodaspect"
     )
 );
 ?>

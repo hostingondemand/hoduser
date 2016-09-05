@@ -9,7 +9,7 @@ namespace modules\maxuser\patch;
 
             $this->patch->table("user_group")
                 ->addField("is_default","int")
-                ->addField("is_guest",int)
+                ->addField("is_guest","int")
                 ->update()
             ;
 
@@ -29,6 +29,23 @@ namespace modules\maxuser\patch;
                  "
             );
 
+            $id=$this->db->lastId();
+            $this->db->query("
+                insert into user_group_access
+                set `level`='1',
+                 `type`='*',
+                 `key`='*',
+                 `user_group_id`='".$id."'
+            ");
+
+            $this->db->query("
+                insert into user
+                set username='user',
+                password='".md5("user")."',
+                user_group_id='".$id."'
+            ");
+
+
             $this->db->query(
                 "insert into user_group
                   set name='admin',
@@ -45,6 +62,14 @@ namespace modules\maxuser\patch;
                 user_group_id='".$id."'
             ");
 
+
+            $this->db->query("
+                insert into user_group_access
+                set `level`='4',
+                 `type`='*',
+                 `key`='*',
+                 `user_group_id`='".$id."'
+            ");
 
             return true;
         }
