@@ -4,13 +4,13 @@ namespace modules\maxuser\service;
 
     class User extends  BaseService{
         function getAccountForLogin($username,$password){
-            $result= $this->db->query("select * from user where username='".$username."' && password='".md5($password)."'")->fetchModel("user");
+            $result= $this->db->select("user")
+                ->where("username='".$username."' && password='".md5($password)."'")->fetchModel("user");
 
             if($result){
                 $result->newHash();
                 $this->db->saveModel($result,"user");
             }
-
             return $result;
         }
 
