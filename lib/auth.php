@@ -11,6 +11,13 @@
             $this->user=$this->service->user->getUserByHash($this->session->userHash);
         }
 
+
+        function getUserId(){
+            if($this->user){
+                return $this->user->id;
+            }
+            return 0;
+        }
         function isAuthenticated(){
             return (bool)$this->user;
         }
