@@ -14,6 +14,13 @@ namespace modules\maxuser\service;
             return $result;
         }
 
+        function getUserById($id){
+            return $this->db->select("user")
+                ->where("id='".$id."'")->fetchModel("user");
+        }
+
+
+
         function getUserByHash($hash){
             $query= $this->db->query("select * from user where hash='".$hash."'");
             if($query && $query->result) {

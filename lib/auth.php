@@ -32,5 +32,9 @@
             $level=$this->service->user->getLevel($id,$type,$key);
             return $level >=$minLevel;
         }
+
+        function setUser($user){
+            $this->user=$user;
+        }
     }
 ?>
