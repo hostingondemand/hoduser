@@ -1,5 +1,5 @@
 <?php
-namespace modules\maxuser\service;
+namespace modules\hoduser\service;
     use lib\service\BaseService;
 
     class User extends  BaseService{

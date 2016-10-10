@@ -1,5 +1,5 @@
 <?php
-namespace modules\maxuser\controller;
+namespace modules\hoduser\controller;
 
 use core\Controller;
 

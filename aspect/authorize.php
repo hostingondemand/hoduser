@@ -1,5 +1,5 @@
 <?php
-    namespace modules\maxuser\aspect;
+    namespace modules\hoduser\aspect;
     use modules\hodaspect\lib\hodaspect\BaseAspect;
 
     class Authorize extends BaseAspect{

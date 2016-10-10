@@ -1,6 +1,6 @@
 <?php
-namespace modules\maxuser\patch;
-    use modules\maxpatch\lib\patch\BasePatch;
+namespace modules\hoduser\patch;
+    use modules\hodpatch\lib\patch\BasePatch;
 
     class Install extends BasePatch{
 

@@ -1,5 +1,5 @@
 <?php
-namespace modules\maxuser\model;
+namespace modules\hoduser\model;
 
 use lib\model\BaseModel;
 

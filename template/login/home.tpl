@@ -1,4 +1,4 @@
-{{maxclient.require("bootstrap")}}
+{{hodclient.require("bootstrap")}}
 
 <div class="row">
     <div class="col-sm-6">

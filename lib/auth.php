@@ -1,5 +1,5 @@
 <?php
-    namespace modules\maxuser\lib;
+    namespace modules\hoduser\lib;
     use core\Lib;
 
     class Auth extends Lib{
