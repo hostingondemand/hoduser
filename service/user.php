@@ -5,7 +5,7 @@ namespace modules\hoduser\service;
     class User extends  BaseService{
         function getAccountForLogin($username,$password){
             $result= $this->db->select("user")
-                ->where("username='".$username."' && password='".md5($password)."'")->fetchModel("user");
+                ->where("username='".$username."' && password='".md5($password)."' && activation='0'")->fetchModel("user");
 
             if($result){
                 $result->newHash();
@@ -14,12 +14,43 @@ namespace modules\hoduser\service;
             return $result;
         }
 
+        function register($registrationForm){
+            $user=$this->model->user->fromRegistrationForm($registrationForm);
+            $user->makeInactive();
+            $this->db->saveModel($user,"user");
+            return $user;
+        }
+
+        function getDefaultGroup(){
+            $result= $this->db->select("user_group")
+                ->where("is_default='1'")->fetchModel("userGroup");
+            return $result;
+        }
+
+        function activateByCode($code){
+            $user=$this->getByActivationCode($code);
+            if($user){
+                $user->activate();
+                $this->db->saveModel($user,"user");
+                return true;
+            }
+            return false;
+        }
+
+        function getByActivationCode($code){
+            return $this->db->select("user")
+                ->where("activation='".$code."'")->fetchModel("user");
+        }
+
         function getUserById($id){
             return $this->db->select("user")
                 ->where("id='".$id."'")->fetchModel("user");
         }
 
-
+        function getUserByName($username){
+            return $this->db->select("user")
+                ->where("username='".$username."'")->fetchModel("user");
+        }
 
         function getUserByHash($hash){
             $query= $this->db->query("select * from user where hash='".$hash."'");
