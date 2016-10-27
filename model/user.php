@@ -20,8 +20,7 @@ class User extends BaseModel
         $this->username=$form->username;
         $this->changePassword($form->password);
         $this->email=$form->email;
-        $group=$this->service->user->getDefaultGroup();
-        $this->userGroup=$group;
+        $this->userGroup=$this->service->user->getDefaultGroup();
         return $this;
     }
 
