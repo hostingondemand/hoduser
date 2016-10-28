@@ -5,13 +5,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">{{language("head")}}</div>
             <div class="panel-body">
-                <form action="{{url("","","doLogin")}}" method="post" class="form-horizontal">
+                <form action="{{url("","","doRegister")}}" method="post" class="form-horizontal">
                     <div class="form-group">{{bootstrap.label(language("field.username"))}} {{bootstrap.inputFor("username","string")}}</div>
                     <div class="form-group">{{bootstrap.label(language("field.password"))}} {{bootstrap.inputFor("password","password")}}</div>
-                    <input type="submit" name="submit" value="{{language("action.login")}}" class="btn btn-success"> <a class="btn btn-info" href="{{url("","register")}}">{{language("action.register")}}</a>
+                    <div class="form-group">{{bootstrap.label(language("field.rePassword"))}} {{bootstrap.inputFor("rePassword","password")}}</div>
+                    <div class="form-group">{{bootstrap.label(language("field.email"))}} {{bootstrap.inputFor("email","string")}}</div>
+                    <input type="submit" name="submit" value="{{language("action.register")}}" class="btn btn-success">
                 </form>
             </div>
         </div>
-
     </div>
 </div>
