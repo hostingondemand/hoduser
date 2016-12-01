@@ -5,9 +5,7 @@ use lib\annotation\baseAspect;
 
 class IpAuthorize extends BaseAspect
 {
-
     var $init;
-
     function onMethodPreCall($parameters, $data)
     {
         if (isset($parameters["provider"])) {
@@ -26,10 +24,7 @@ class IpAuthorize extends BaseAspect
         } else {
             $this->event->raise("authorizationFail", array("parameters" => $parameters, "data" => $data));
         }
-
-
     }
-
 }
 
 ?>
