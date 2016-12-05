@@ -1,7 +1,7 @@
 {{hodclient.require("bootstrap")}}
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">{{language("head")}}</div>
             <div class="panel-body">
