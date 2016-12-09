@@ -36,5 +36,17 @@
         function setUser($user){
             $this->user=$user;
         }
+
+        function setupFakeSession($id){
+            $this->session->fakeUserId=$id;
+        }
+
+        function isInFakeSession(){
+            return $this->session->fakeUserId;
+        }
+
+        function stopFakeSession(){
+            $this->session->fakeUserId=false;
+        }
     }
 ?>
