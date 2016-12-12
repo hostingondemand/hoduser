@@ -12,6 +12,17 @@ class User extends BaseModel
     var $email;
     var $activation;
 
+
+    var $hasSession;
+    function getHasSession(){
+        return $this->hash?true:false;
+    }
+
+    var $isActive;
+    function getIsActive(){
+        return $this->activation?false:true;
+    }
+
     function newHash(){
         $this->hash= md5($this->username.time()).md5(microtime().rand(0,100000));
     }

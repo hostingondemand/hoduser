@@ -14,7 +14,11 @@
 
         function getUserId(){
             if($this->user){
-                return $this->user->id;
+                if($this->session->fakeUserId) {
+                    return $this->session->fakeUserId;
+                }else{
+                    return $this->user->id;
+                }
             }
             return 0;
         }
@@ -42,7 +46,7 @@
         }
 
         function isInFakeSession(){
-            return $this->session->fakeUserId;
+            return $this->session->fakeUserId && $this->session->fakeUserId!=$this->user->id;
         }
 
         function stopFakeSession(){
