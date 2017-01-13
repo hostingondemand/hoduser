@@ -14,7 +14,7 @@ namespace modules\hoduser\patch;
             ;
 
             $this->db->query(
-                "insert into user_group
+                "insert into ".$this->db->getPrefix()."user_group
                   set name='guest',
                   is_default=0,
                   is_guest=1
@@ -22,7 +22,7 @@ namespace modules\hoduser\patch;
             );
 
             $this->db->query(
-                "insert into user_group
+                "insert into ".$this->db->getPrefix()."user_group
                   set name='user',
                   is_default=1,
                   is_guest=0
@@ -31,7 +31,7 @@ namespace modules\hoduser\patch;
 
             $id=$this->db->lastId();
             $this->db->query("
-                insert into user_group_access
+                insert into ".$this->db->getPrefix()."user_group_access
                 set `level`='1',
                  `type`='*',
                  `key`='*',
@@ -39,7 +39,7 @@ namespace modules\hoduser\patch;
             ");
 
             $this->db->query("
-                insert into user
+                insert into ".$this->db->getPrefix()."user
                 set username='user',
                 password='".md5("user")."',
                 user_group_id='".$id."'
@@ -47,7 +47,7 @@ namespace modules\hoduser\patch;
 
 
             $this->db->query(
-                "insert into user_group
+                "insert into ".$this->db->getPrefix()."user_group
                   set name='admin',
                   is_default=0,
                   is_guest=0
@@ -56,7 +56,7 @@ namespace modules\hoduser\patch;
             $id=$this->db->lastId();
 
             $this->db->query("
-                insert into user
+                insert into ".$this->db->getPrefix()."user
                 set username='admin',
                 password='".md5("admin")."',
                 user_group_id='".$id."'
@@ -64,7 +64,7 @@ namespace modules\hoduser\patch;
 
 
             $this->db->query("
-                insert into user_group_access
+                insert into ".$this->db->getPrefix()."user_group_access
                 set `level`='4',
                  `type`='*',
                  `key`='*',

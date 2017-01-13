@@ -52,6 +52,11 @@ namespace modules\hoduser\service;
                 ->where("username='".$username."'")->fetchModel("user");
         }
 
+        function getAll(){
+            return $this->db->select("user")
+                ->fetchAllModel("user");
+        }
+
         function getUserByHash($hash){
             $query= $this->db->query("select * from user where hash='".$hash."'");
             if($query && $query->result) {
