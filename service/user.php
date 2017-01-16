@@ -3,6 +3,14 @@ namespace modules\hoduser\service;
     use lib\service\BaseService;
 
     class User extends  BaseService{
+
+        function logout($userId){
+            $user=$this->getUserById($userId);
+            if($user) {
+                $user->hash=false;
+                $this->db->saveModel($user, "user");
+            }
+        }
         function getAccountForLogin($username,$password){
             $result= $this->db->select("user")
                 ->where("username='".$username."' && password='".md5($password)."' && (activation='0' || activation is null)")->fetchModel("user");
@@ -12,6 +20,11 @@ namespace modules\hoduser\service;
                 $this->db->saveModel($result,"user");
             }
             return $result;
+        }
+
+        function createSessionForUser($user){
+            $user->newHash();
+            $this->db->saveModel($user,"user");
         }
 
         function register($registrationForm){
@@ -99,7 +112,6 @@ namespace modules\hoduser\service;
             }
 
             return 0;
-
         }
     }
 ?>

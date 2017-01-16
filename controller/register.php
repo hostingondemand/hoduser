@@ -37,7 +37,8 @@ class Register extends Controller
         }else{
             $this->message->send($this->language->get("activation.fail"),"warning");
         }
-        return $this->response->redirect("","login");
+        $model->login();
+        return $this->response->redirect(array());
     }
 
 }
