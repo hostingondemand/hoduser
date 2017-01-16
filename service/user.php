@@ -58,10 +58,12 @@ namespace modules\hoduser\service;
         }
 
         function getUserByHash($hash){
-            $query= $this->db->query("select * from user where hash='".$hash."'");
-            if($query && $query->result) {
-                $result = $query->fetchModel("user");
-                return $result;
+            if(!empty($hash)) {
+                $query = $this->db->query("select * from user where hash='" . $hash . "'");
+                if ($query && $query->result) {
+                    $result = $query->fetchModel("user");
+                    return $result;
+                }
             }
             return 0;
         }
