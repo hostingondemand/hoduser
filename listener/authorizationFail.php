@@ -1,7 +1,7 @@
 <?php
 namespace modules\hoduser\listener;
 
-use lib\event\BaseListener;
+use hodphp\lib\event\BaseListener;
 
 class AuthorizationFail extends BaseListener
 {

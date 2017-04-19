@@ -1,6 +1,6 @@
 <?php
 namespace modules\hoduser\lib;
-use core\Lib;
+use hodphp\core\Lib;
 
 abstract class BaseIpAllowProvider extends Lib
 {

@@ -1,5 +1,5 @@
 <?php namespace modules\hoduser\patch;
-    use lib\patch\BasePatch;
+    use hodphp\lib\patch\BasePatch;
 
     class ApiKey extends BasePatch{
 

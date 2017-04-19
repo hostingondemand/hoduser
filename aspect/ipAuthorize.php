@@ -1,7 +1,7 @@
 <?php
 namespace modules\hoduser\aspect;
 
-use lib\annotation\baseAspect;
+use hodphp\lib\annotation\baseAspect;
 
 class IpAuthorize extends BaseAspect
 {
