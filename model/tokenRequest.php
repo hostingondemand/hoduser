@@ -1,7 +1,7 @@
 <?php
 namespace modules\hoduser\model;
 
-use lib\model\BaseModel;
+use hodphp\lib\model\BaseModel;
 
 class TokenRequest extends BaseModel
 {

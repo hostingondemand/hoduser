@@ -1,6 +1,6 @@
 <?php
     namespace modules\hoduser\aspect;
-    use lib\annotation\baseAspect;
+    use hodphp\lib\annotation\baseAspect;
 
     class ApiAuthorize extends BaseAspect{
         var $init;
