@@ -22,6 +22,13 @@
             }
             return 0;
         }
+
+        function getUserName(){
+            if($this->user) {
+                return $this->user - username;
+            } return "";
+        }
+
         function isAuthenticated(){
             return (bool)$this->user;
         }
