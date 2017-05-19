@@ -25,7 +25,7 @@
 
         function getUserName(){
             if($this->user) {
-                return $this->user - username;
+                return $this->user->username;
             } return "";
         }
 
