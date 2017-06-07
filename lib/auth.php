@@ -11,6 +11,9 @@
             $this->user=$this->service->user->getUserByHash($this->session->userHash);
         }
 
+        function getField($field){
+            return $this->user->$field;
+        }
 
         function getUserId(){
             if($this->user){
