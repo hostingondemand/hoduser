@@ -20,7 +20,12 @@
         }
 
         function isValid(){
-            return $this->host && gethostbyname($this->host)==$_SERVER['REMOTE_ADDR'];
+            $remote_addr=$_SERVER["REMOTE_ADDR"];
+            $ipv4=$this->helper->dns->gethostbyname($this->host);
+            $ipv6=$this->helper->dns->gethostbyname6($this->host);
+
+            $this->debug->info("Api connection", $remote_addr." - ".$ipv4." - ".$ipv6);
+            return $this->host && $remote_addr==$ipv4||$remote_addr==$ipv6;
         }
 
 
