@@ -7,7 +7,7 @@
         function onMethodPreCall($parameters, $data)
         {
                 if(!$this->init) {
-                    $token=$this->request->getHeaderByName("authorization");
+                    $token=$this->request->getHeaderByName("token");
                     $user = $this->service->apikey->getByUserToken($token);
                     $this->auth->setUser($user);
                     $this->init=true;
