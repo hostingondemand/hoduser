@@ -50,9 +50,24 @@ namespace modules\hoduser\service;
             return false;
         }
 
+        function save($user){
+            $this->db->saveModel($user,"user");
+        }
+
         function getByActivationCode($code){
             return $this->db->select("user")
                 ->where("activation='".$code."'")->fetchModel("user");
+        }
+
+        function getByResetCode($code){
+            return $this->db->select("user")
+                ->where("resetCode='".$code."'")->fetchModel("user");
+        }
+
+        function getByEmail($email){
+            return $this->db->select("user")
+                ->where("email='".$email."'")
+                ->fetchModel("user");
         }
 
         function getUserById($id){

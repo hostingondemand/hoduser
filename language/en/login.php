@@ -3,7 +3,8 @@
     "field.username"=>"Username",
     "field.password"=>"Password",
     "action.login"=>"Login",
-    "action.register"=>"Register"
+    "action.register"=>"Register",
+    "action.forgot"=>"Forgot password"
 );
 
 ?>
