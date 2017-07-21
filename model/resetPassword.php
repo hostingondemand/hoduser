@@ -51,7 +51,7 @@ class ResetPassword extends BaseModel
         return $this;
     }
 
-    function CheckCode($code=false)
+    function checkCode($code=false)
     {
         if($code) {
             $this->code = $code;

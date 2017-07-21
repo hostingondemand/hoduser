@@ -8,7 +8,7 @@
         
         "mail.resetPassword.subject"=>"Reset password",
         "mail.resetPassword.greeting" => "Hello",
-        "mail.resetPassword.explaination" => 'The password reset link is:',
+        "mail.resetPassword.explanation" => 'The password reset link is:',
 
         "field.password" => "Password",
         "field.rePassword" => "Password again",
