@@ -10,6 +10,7 @@ class Login extends Controller
         $this->response->renderView();
     }
 
+
     function doLogin()
     {
         $model=$this->model->login->fromRequest();

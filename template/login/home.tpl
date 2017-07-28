@@ -8,7 +8,9 @@
                 <form action="{{url("","","doLogin")}}" method="post" class="form-horizontal">
                     <div class="form-group">{{bootstrap.label(language("field.username"))}} {{bootstrap.inputFor("username","string")}}</div>
                     <div class="form-group">{{bootstrap.label(language("field.password"))}} {{bootstrap.inputFor("password","password")}}</div>
-                    <input type="submit" name="submit" value="{{language("action.login")}}" class="btn btn-success"> <a class="btn btn-info" href="{{url("","register")}}">{{language("action.register")}}</a>
+                    <input type="submit" name="submit" value="{{language("action.login")}}" class="btn btn-success">
+                    <a class="btn btn-info" href="{{url("","register")}}">{{language("action.register")}}</a>
+                    <a class="btn btn-info" href="{{url("","resetPassword")}}">{{language("action.forgot")}}</a>
                 </form>
             </div>
         </div>

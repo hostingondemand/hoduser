@@ -11,6 +11,7 @@ class User extends BaseModel
     var $userGroup;
     var $email;
     var $activation;
+    var $resetCode;
 
 
     var $hasSession;
@@ -47,6 +48,20 @@ class User extends BaseModel
         if($password){
             $this->password=md5($password);
         }
+    }
+
+    function generateCode(){
+        $validity=$this->config->get("user.codeValidity","website")?:300; // 5 minutes by default
+        $this->resetCode=time()+$validity."_".md5(time().srand(0,10000));
+    }
+
+    function checkCode(){
+        $exp=explode("_",$this->resetCode);
+        return $exp[0]>time();
+    }
+
+    function save(){
+        $this->service->user->save($this);
     }
 
     function __fieldHandlers(){
