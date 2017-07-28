@@ -1,6 +1,6 @@
-<p>{{language("mail.restPassword.greeting")}} {{username}},</p>
+<p>{{language("mail.resetPassword.greeting")}} {{username}},</p>
 
 <p>
-{{language("mail.restPassword.explanation")}}
+{{language("mail.resetPassword.explanation")}}
 </p>
 <a href="{{url("","","form",resetCode)}}">{{url("","","form",resetCode)}}</a>
