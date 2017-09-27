@@ -17,7 +17,11 @@ class Activate extends BaseModel
     function activate()
     {
         $this->user = $this->service->user->getByActivationCode($this->code);
-        return $this->service->user->activateByCode($this->code);
+        $result= $this->service->user->activateByCode($this->code);
+        if($result){
+            $this->user->activation=0;
+        }
+        return $result;
     }
 
     function login()
