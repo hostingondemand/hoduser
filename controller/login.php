@@ -15,6 +15,7 @@ class Login extends Controller
     {
         $model=$this->model->login->fromRequest();
         if($model->isValid() && $model->tryLogin()){
+            $this->event->raise("login");
            return $this->response->redirect("home");
         }else{
            return $this->response->renderView($model,"login/home");
