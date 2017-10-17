@@ -1,7 +1,7 @@
 <?php
     return [
-        "message.sent"=>"A password reset link is sent to your email address",
-        "message.notExist"=>"No account with this email address exists",
+        "message.sent"=>"A password reset link is sent to your e-mail address",
+        "message.notExist"=>"No account with this e-mail address exists",
         "message.code.correct"=>"Change password",
         "message.code.incorrect"=>"Resetcode was invalid",
         "message.success"=>"Password successfully changed",
