@@ -62,5 +62,22 @@
         function stopFakeSession(){
             $this->session->fakeUserId=false;
         }
+
+        function getPreference($key)
+        {
+            if($this->user) {
+                $preference = $this->service->preference->getPreferenceByKey($this->user->id,$key);
+                if ($preference) {
+                    return $preference->value;
+                }
+            }
+                return false;
+        }
+
+        function setPreference($key,$value){
+            if($this->user) {
+                $this->service->preference->savePreference($this->user->id,$key,$value);
+            }
+        }
     }
 ?>
