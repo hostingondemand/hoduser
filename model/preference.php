@@ -10,5 +10,4 @@ class Preference extends BaseModel
     var $key;
     var $value;
 }
-
 ?>

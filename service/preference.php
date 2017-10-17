@@ -21,8 +21,5 @@ class Preference extends BaseService
         $preference->value=$value;
         $this->db->saveModel($preference,"userPreference");
     }
-
-
 }
-
 ?>
