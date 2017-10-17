@@ -2,12 +2,12 @@
     "head" => "Enter your username and password",
     "field.username" => "Username",
     "field.password" => "Password",
-    "field.rePassword" => "Password again",
+    "field.rePassword" => "Repeat password",
     "field.email" => "E-mail address",
     "action.register" => "Register",
 
     "mail.activation.greeting" => "Hello",
-    "mail.activation.explaination" => 'Your account needs to be activated to use the services of {{config("name","website")}}. Go to the activation link below to activate your account.',
+    "mail.activation.explanation" => 'Your account needs to be activated to use the services of {{config("name","website")}}. Go to the activation link below to activate your account.',
     "mail.activation.subject" => "Account activation",
 
     "title.success" => "Success",
