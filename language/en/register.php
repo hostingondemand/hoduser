@@ -11,7 +11,7 @@
     "mail.activation.subject" => "Account activation",
 
     "title.success" => "Success",
-    "text.success" => "Your account is successfully registered. Your account needs to be activated. You will receive an e-mail with further instructions.",
+    "text.success" => "Your account is successfully registered but still needs to be activated. You will receive an e-mail with further instructions.",
 
     "activation.succes" => "Account is successfully activated",
     "activation.fail" => "Account activation failed"
