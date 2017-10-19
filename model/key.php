@@ -24,8 +24,14 @@
             $ipv4=$this->helper->dns->gethostbyname($this->host);
             $ipv6=$this->helper->dns->gethostbyname6($this->host);
 
+            $remote_host_ipv4 = false;
+            if (!empty($ipv6)) {
+                $remote_host = $this->helper->dns->gethostbyaddr($remote_addr);
+                $remote_host_ipv4 = $this->helper->dns->gethostbyname($remote_host);
+            }
+
             $this->debug->info("Api connection", $remote_addr." - ".$ipv4." - ".$ipv6);
-            return $this->host && $remote_addr==$ipv4||$remote_addr==$ipv6;
+            return $this->host && ($remote_addr==$ipv4 || $remote_addr==$ipv6 || $remote_addr == $remote_host_ipv4);
         }
 
 
