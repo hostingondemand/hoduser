@@ -17,10 +17,12 @@ class Activate extends BaseModel
     function activate()
     {
         $this->user = $this->service->user->getByActivationCode($this->code);
-        $result= $this->service->user->activateByCode($this->code);
-        if($result){
-            $this->user->activation=0;
+        $result = $this->service->user->activateByCode($this->code);
+
+        if ($result) {
+            $this->user->activation = 0;
         }
+
         return $result;
     }
 
@@ -28,10 +30,9 @@ class Activate extends BaseModel
     {
         if ($this->user) {
             $this->service->user->createSessionForUser($this->user);
-             $this->session->userHash = $this->user->hash;
+            $this->session->userHash = $this->user->hash;
         }
     }
-
 }
 
 ?>
