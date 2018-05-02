@@ -14,6 +14,10 @@ class Auth extends Lib
         $this->setup();
     }
 
+    function getUser(){
+        return $this->user;
+    }
+
     function setup($userId = false)
     {
         if(!$userId) {
