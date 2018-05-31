@@ -1,6 +1,6 @@
 <?php
 namespace modules\hoduser\controller;
-use hodphp\core\Controller;
+use framework\core\Controller;
 
 class Token extends Controller{
     function home(){}

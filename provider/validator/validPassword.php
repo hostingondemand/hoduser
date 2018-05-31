@@ -1,8 +1,8 @@
 <?php
 namespace modules\hoduser\provider\validator;
 
-use hodphp\core\Loader;
-use hodphp\lib\validation\BaseValidator;
+use framework\core\Loader;
+use framework\lib\validation\BaseValidator;
 
 class ValidPassword extends BaseValidator{
 

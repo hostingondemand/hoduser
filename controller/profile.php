@@ -1,7 +1,7 @@
 <?php
 namespace modules\hoduser\controller;
 
-use hodphp\core\Controller;
+use framework\core\Controller;
 
 class Profile extends Controller
 {

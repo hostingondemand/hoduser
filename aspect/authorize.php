@@ -1,6 +1,6 @@
 <?php
     namespace modules\hoduser\aspect;
-    use hodphp\lib\annotation\baseAspect;
+    use framework\lib\annotation\baseAspect;
 
     class Authorize extends BaseAspect{
         function onMethodPreCall($parameters, $data)

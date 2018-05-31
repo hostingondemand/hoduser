@@ -1,6 +1,6 @@
 <?php
 namespace modules\hoduser\patch;
-    use hodphp\lib\patch\BasePatch;
+    use framework\lib\patch\BasePatch;
 
     class GroupsAndAdmin extends BasePatch{
 

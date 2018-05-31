@@ -2,7 +2,7 @@
 
 namespace modules\hoduser\lib;
 
-use hodphp\core\Lib;
+use framework\core\Lib;
 
 class Auth extends Lib
 {

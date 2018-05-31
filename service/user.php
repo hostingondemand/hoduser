@@ -1,6 +1,6 @@
 <?php
 namespace modules\hoduser\service;
-    use hodphp\lib\service\BaseService;
+    use framework\lib\service\BaseService;
 
     class User extends  BaseService{
 

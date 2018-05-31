@@ -3,7 +3,7 @@
 ?><?php
 namespace modules\hoduser\model;
 
-use hodphp\lib\model\BaseModel;
+use framework\lib\model\BaseModel;
 
 class ResetPassword extends BaseModel
 {
