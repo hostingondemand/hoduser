@@ -8,6 +8,7 @@ class Auth extends Lib
 {
 
     private $user;
+    private $_superuser=false;
 
     function __construct()
     {
@@ -57,9 +58,17 @@ class Auth extends Lib
         return (bool)$this->user;
     }
 
+
+    function superUser(){
+        $this->_superuser=true;
+    }
+
     function isAuthorized($type, $key, $minLevel)
     {
 
+        if($this->_superuser){
+            return true;
+        }
         if ($this->user) {
             $id = $this->user->id;
         } else {
@@ -106,6 +115,7 @@ class Auth extends Lib
             $this->service->preference->savePreference($this->user->id, $key, $value);
         }
     }
+
 }
 
 ?>
